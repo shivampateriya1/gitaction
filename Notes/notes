@@ -1,0 +1,17 @@
+Advantages
+1. Fully integreated with Github 
+2. Respond to any Github event
+3. Community-powered workflows
+4.Any platform,any language,any cloud
+
+
+-------------------
+Linux, macos,windows, and container
+matrix builds
+Streaming,Searchable,linkable logs
+Built-in secret store
+Easy to write, easy to share
+                                    --------------------------------------------------
+                                    |  Events --------> Workflows -------->Actions   |
+                                    --------------------------------------------------
+
