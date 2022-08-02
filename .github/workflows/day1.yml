@@ -1,8 +1,10 @@
 name: Gitaction learing 1
-on:
+on: 
   push:
-    paths:
-      - testfolder1
+   paths:
+     - "testfloder1"
+  workflow_dispatch:
+    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,15 +14,3 @@ jobs:
       - name: checkout in dir
         working-directory: testfolder1
         run: python3 hello.py
-
-
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: ls
-      - name: checkout in dir
-        working-directory: testfolder2
-        run: python3 hello.py      
-
-
