@@ -18,7 +18,7 @@ name: test2
 on:
   push:
     paths:
-      - 'testfolder2/**/*'
+      - testfolder2/**
 jobs:
   build_service_2:
     name: Build Service 2
