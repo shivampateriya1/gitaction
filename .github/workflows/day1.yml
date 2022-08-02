@@ -1,9 +1,8 @@
-name: test1
-on: 
+name: Gitaction learing 1
+on:
   push:
     paths:
-      - testfolder1/**
-
+      - testfolder1
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,21 +12,15 @@ jobs:
       - name: checkout in dir
         working-directory: testfolder1
         run: python3 hello.py
----
-name: test2
-on:
-  push:
-    paths:
-      - testfolder2/**
-jobs:
-  build_service_2:
-    name: Build Service 2
+
+
+  job2:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: check work dir 2
-      working-directory: testfolder2
-      run: python3 hello.py
+      - uses: actions/checkout@v3
+      - run: ls
+      - name: checkout in dir
+        working-directory: testfolder2
+        run: python3 hello.py      
 
 
