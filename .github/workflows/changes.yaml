@@ -1,0 +1,30 @@
+name: changes in a file
+on: 
+  push:
+  # workflow_dispatch:
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: dorny/paths-filter@v2
+      id: changes
+      with:
+        filters: |
+          testfolder1:
+            - 'testfolder1/**'
+          testfolder2:
+            - 'testfolder2/**'  
+
+      # run only if some file in 'src' folder was changed
+    - if: steps.changes.outputs.testfolder1 == 'true'
+      # name: checkout in dir
+      working-directory: testfolder1
+      run: |
+          docker build -t hello .
+
+    - if: steps.changes.outputs.testfolder2 == 'true'
+      # name: checkout in dir
+      working-directory: testfolder2
+      run: python3 hello.py

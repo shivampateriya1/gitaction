@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     
 jobs:
-  build:
+  folder1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,3 +14,4 @@ jobs:
       - name: checkout in dir
         working-directory: testfolder1
         run: python3 hello.py
+  
